@@ -262,3 +262,60 @@ ruslan@ruslanPC:~/clone/repo$ cd
 ruslan@ruslanPC:~$ cd repo
 ruslan@ruslanPC:~/repo$ git checkout -b feature1
 Switched to a new branch 'feature1
+
+ruslan@ruslanPC:~/clone/repo$ git fetch origin
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From github.com:Altymyshev/repo
+ * [new branch]      feature1   -> origin/feature1
+ruslan@ruslanPC:~/clone/repo$ git checkout -b feature1 repo/feature1
+fatal: Cannot update paths and switch to branch 'feature1' at the same time.
+Did you intend to checkout 'repo/feature1' which can not be resolved as commit?
+ruslan@ruslanPC:~/clone/repo$ git checkout feature1
+Branch feature1 set up to track remote branch feature1 from origin.
+Switched to a new branch 'feature1'
+ruslan@ruslanPC:~/clone/repo$ ls
+fileA  fileB  task1.1_answer
+ruslan@ruslanPC:~/clone/repo$ git checkout msater
+error: pathspec 'msater' did not match any file(s) known to git.
+ruslan@ruslanPC:~/clone/repo$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+ruslan@ruslanPC:~/clone/repo$ git merge feature1
+Auto-merging task1.1_answer
+CONFLICT (content): Merge conflict in task1.1_answer
+Automatic merge failed; fix conflicts and then commit the result.
+ruslan@ruslanPC:~/clone/repo$ git merge feature1
+error: merge is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+ruslan@ruslanPC:~/clone/repo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Changes to be committed:
+
+	modified:   fileB
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   task1.1_answer
+
+ruslan@ruslanPC:~/clone/repo$ git add task1.1_answer
+ruslan@ruslanPC:~/clone/repo$ git merge feature1
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+ruslan@ruslanPC:~/clone/repo$ git commit -m'for merge point 14'
+[master 739c54b] for merge point 14
+ruslan@ruslanPC:~/clone/repo$ git merge feature1
+Already up-to-date.
+ruslan@ruslanPC:~/clone/repo$ 
+
