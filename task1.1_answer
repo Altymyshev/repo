@@ -39,3 +39,128 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ruslan@ruslanPC:~/repo$ 
+
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	task1.1_answer
+
+nothing added to commit but untracked files present (use "git add" to track)
+ruslan@ruslanPC:~/repo$ git add task1.1_answer
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   task1.1_answer
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+ruslan@ruslanPC:~/repo$ git commit -m'Add task1.1_answer'
+[master (root-commit) 7ba8e49] Add task1.1_answer
+ 1 file changed, 41 insertions(+)
+ create mode 100644 task1.1_answer
+ruslan@ruslanPC:~/repo$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 867 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:Altymyshev/repo.git
+ * [new branch]      master -> master
+ruslan@ruslanPC:~/repo$ cd
+ruslan@ruslanPC:~$ cd clone
+ruslan@ruslanPC:~/clone$ git clone git@github.com:Altymyshev/repo.git
+Cloning into 'repo'...
+Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
+ruslan@ruslanPC:~/clone$ 
+
+
+ruslan@ruslanPC:~/clone/repo$ cp fileA /home/ruslan/repo
+ruslan@ruslanPC:~/clone/repo$ cp fileB /home/ruslan/repo
+ruslan@ruslanPC:~/clone/repo$ cd
+ruslan@ruslanPC:~$ cd repo
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   task1.1_answer
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	fileA
+	fileB
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ruslan@ruslanPC:~/repo$ rm -rf fileB
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   task1.1_answer
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	fileA
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
