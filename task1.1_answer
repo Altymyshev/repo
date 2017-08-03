@@ -1,0 +1,41 @@
+ruslan@ruslanPC:~$ git clone git@github.com:Altymyshev/repo.git
+Cloning into 'repo'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+ruslan@ruslanPC:~$ git config --global user.name "Алтымышев Руслан"
+ruslan@ruslanPC:~$ git config --global user.email "altymyshev@reg.ru"
+ruslan@ruslanPC:~$ git config --list
+user.name=Алтымышев Руслан
+user.email=altymyshev@reg.ru
+ruslan@ruslanPC:~$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+ruslan@ruslanPC:~$ cd repo
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	task1.1
+
+nothing added to commit but untracked files present (use "git add" to track)
+sudo apt install gedit
+ruslan@ruslanPC:~/repo$ gedit .gitignore
+
+** (gedit:2812): WARNING **: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(gedit:2812): Gtk-WARNING **: Calling Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
+ruslan@ruslanPC:~/repo$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+ruslan@ruslanPC:~/repo$ 
