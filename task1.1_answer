@@ -180,3 +180,11 @@ Untracked files:
 	fileA
 
 no changes added to commit (use "git add" and/or "git commit -a")
+
+ruslan@ruslanPC:~/clone/repo$ git checkout feature2
+Switched to branch 'feature2'
+ruslan@ruslanPC:~/clone/repo$ git branch
+  feature1
+* feature2
+  master
+ruslan@ruslanPC:~/clone/repo$ 
