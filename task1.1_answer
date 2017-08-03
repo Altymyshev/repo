@@ -164,3 +164,89 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
+
+
+ruslan@ruslanPC:~/clone/repo$ git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+ruslan@ruslanPC:~/clone/repo$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	modified:   fileA
+	modified:   task1.1_answer
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   fileA
+
+ruslan@ruslanPC:~/clone/repo$ git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+ruslan@ruslanPC:~/clone/repo$ git add fileA
+ruslan@ruslanPC:~/clone/repo$ git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+ruslan@ruslanPC:~/clone/repo$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	modified:   fileA
+	modified:   task1.1_answer
+
+ruslan@ruslanPC:~/clone/repo$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	modified:   fileA
+	modified:   task1.1_answer
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   task1.1_answer
+
+ruslan@ruslanPC:~/clone/repo$ git add task1.1_answer
+ruslan@ruslanPC:~/clone/repo$ git pull
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+ruslan@ruslanPC:~/clone/repo$ git commit -m'conflict'
+[master 7a1ed1e] conflict
+ruslan@ruslanPC:~/clone/repo$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:Altymyshev/repo
+   6c3187e..cd34220  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ruslan@ruslanPC:~/clone/repo$ cd
+ruslan@ruslanPC:~$ cd repo
+ruslan@ruslanPC:~/repo$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
